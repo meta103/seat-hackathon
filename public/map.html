@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset='utf-8' />
+  <title>Display a map</title>
+  <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
+  <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.53.0/mapbox-gl.js'></script>
+  <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.53.0/mapbox-gl.css' rel='stylesheet' />
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+    }
+
+    #map {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      width: 100%;
+    }
+
+    .marker1 {
+      background-color: rgba(241, 208, 56, 0.6);
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+    }
+
+    .marker2 {
+      background-color: rgba(108, 241, 56, 0.6);
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+    }
+
+    .marker3 {
+      background-color: rgba(56, 235, 241, 0.6);
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+    }
+
+    .marker4 {
+      background-color: rgba(241, 208, 56, 0.6);
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+    }
+
+    .marker5 {
+      background-color: rgba(108, 241, 56, 0.6);
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+    }
+
+    .marker6 {
+      background-color: rgba(56, 235, 241, 0.6);
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+    }
+
+    .marker7 {
+      background-color: rgba(241, 208, 56, 0.6);
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+    }
+
+    button {
+      position: absolute;
+      bottom: 0;
+      height: 55px;
+      width: 100%;
+      background-color: #EEC40A;
+      color: black;
+      font-size: 2rem;
+      font-weight: bolder;
+      border: none;
+    }
+  </style>
+</head>
+
+<body>
+  <div id='map'></div>
+  <script>
+    mapboxgl.accessToken =
+      'pk.eyJ1IjoiaXNtYWVsamFvdWhhciIsImEiOiJjanMzZDBobzYwaHZ0NDNwbXlhdHM5eDF2In0.PT_A0flp8x4mH78w-JOegA';
+    const map = new mapboxgl.Map({
+      container: 'map',
+      style: 'mapbox://styles/ismaeljaouhar/cjsmz0aze8ddo1fmqhzvogy4g',
+      center: [2.154007, 41.390205],
+      zoom: 13
+    });
+    var geojson = {
+      type: 'FeatureCollection',
+      features: [{
+        type: 'Feature',
+        geometry: {
+          type: 'Point',
+          coordinates: [2.154007, 41.390205]
+        },
+        properties: {
+          title: 'Pepe',
+          description: ''
+        }
+      },
+      {
+        type: 'Feature',
+        geometry: {
+          type: 'Point',
+          coordinates: [2.1553802910319177, 41.39185807947072]
+        },
+        properties: {
+          title: 'Pepe',
+          description: ''
+        }
+      },
+      {
+        type: 'Feature',
+        geometry: {
+          type: 'Point',
+          coordinates: [2.162054508407522, 41.40565759456305]
+        },
+        properties: {
+          title: 'Pepe',
+          description: ''
+        }
+      },
+      {
+        type: 'Feature',
+        geometry: {
+          type: 'Point',
+          coordinates: [2.164833276941465, 41.405866819292925]
+        },
+        properties: {
+          title: 'Pepe',
+          description: ''
+        }
+      },
+      {
+        type: 'Feature',
+        geometry: {
+          type: 'Point',
+          coordinates: [2.163191764999823, 41.40391939381962]
+        },
+        properties: {
+          title: 'Pepe',
+          description: ''
+        }
+      },
+      {
+        type: 'Feature',
+        geometry: {
+          type: 'Point',
+          coordinates: [2.164007, 41.380205]
+        },
+        properties: {
+          title: 'Luisa',
+          description: ''
+        }
+      },
+      {
+        type: 'Feature',
+        geometry: {
+          type: 'Point',
+          coordinates: [2.1498731903273836, 41.373398372975575]
+        },
+        properties: {
+          title: 'Alfonso',
+          description: ''
+        }
+      },
+      {
+        type: 'Feature',
+        geometry: {
+          type: 'Point',
+          coordinates: [2.1502180077607704, 41.37346306226223]
+        },
+        properties: {
+          title: 'Alfonso',
+          description: ''
+        }
+      }
+      ]
+    };
+    let counter = 0;
+    geojson.features.forEach(function (marker) {
+      counter++;
+      var el = document.createElement('div');
+      el.className = 'marker' + counter;
+      new mapboxgl.Marker(el)
+        .setLngLat(marker.geometry.coordinates)
+        .addTo(map);
+    });
+  </script>
+  <button>Confirm</button>
+</body>
+
+</html>

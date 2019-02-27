@@ -1,0 +1,63 @@
+body {
+  margin: 0;
+padding: 0;
+}
+#map {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+}
+.marker1 {
+background-color: rgba(241, 208, 56, 0.6);
+width: 60px;
+height: 60px;
+border-radius: 50%;
+}
+.marker2 {
+  background-color: rgba(108, 241, 56, 0.6);
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+}
+.marker3 {
+  background-color: rgba(56, 235, 241, 0.6);
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+}
+.marker4 {
+  background-color: rgba(241, 208, 56, 0.6);
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+}
+.marker5 {
+  background-color: rgba(108, 241, 56, 0.6);
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+}
+.marker6 {
+  background-color: rgba(56, 235, 241, 0.6);
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+}
+.marker7 {
+  background-color: rgba(241, 208, 56, 0.6);
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+}
+button {
+  position: absolute;
+  bottom: 0;
+  height: 55px;
+  width: 100%;
+  background-color: #EEC40A;
+  color: black;
+  font-size: 2rem;
+  font-weight: bolder;
+  border: none;
+}

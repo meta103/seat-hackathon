@@ -1,26 +1,34 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
+// import axios from 'axios';
+import { Switch, Route } from 'react-router-dom';
+import { Link } from 'react-router-dom';
+import Search from './component/Search';
+import Mapbox from './component/Map';
+
 
 class App extends Component {
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
-      </div>
+      <Switch>
+        <Route exact path='/home' >
+          <div className="App">
+            <div className="App-header">
+              <img src="https://vignette.wikia.nocookie.net/logopedia/images/9/94/Seat-logo.png/revision/latest?cb=20170703190447" className="App-logo" alt="logo" />
+              <Link to='/search'>
+                <button className="button">
+                  START
+              </button>
+              </Link>
+            </div>
+
+          </div>
+
+        </Route>
+        <Route exact path='/search' component={Search} />
+        <Route exact path='/map' component={Mapbox} />
+
+      </Switch>
     );
   }
 }
